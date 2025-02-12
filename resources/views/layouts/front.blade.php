@@ -13,7 +13,7 @@
         <a class="nav-link active" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/services">Services</a>
         <a class="nav-link" href="/contact">Contact</a>
-        <a class="nav-link" href="/projects">projects </a>
+        <!-- <a class="nav-link" href="/projects">projects </a> -->
         <a class="nav-link" href="/events">events </a>
     </nav>
 
