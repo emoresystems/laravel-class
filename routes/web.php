@@ -28,11 +28,5 @@ Route::get('/contact', function(){
     // return "contact page";
 });
 
-// Route::get('/events', function(){
-//     return view('events');
-// });
-Route::get('/events', [EventController::class, 'index']);
 
-Route::get('/CreateEvent', [EventController::class, 'create']);
-
-Route::post('/store', [EventController::class, 'store']);
+Route::resource('events', EventController::class);

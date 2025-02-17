@@ -7,22 +7,31 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
 
         $events = Event::all();
 
-        return view('events', compact('events'));
+        return view('events.index', compact('events'));
     }
 
-
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
-        return view('createForm');
+        return view('events.createForm');
     }
 
 
-    public function store(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
 
         $request->validate([
             'title' => 'required|string|max:255',
@@ -34,4 +43,43 @@ class EventController extends Controller
         return redirect('/events')->with('success', 'Event has been created successfully');
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Event $event)
+    {
+        return view('events.editForm', compact('event'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id){
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'location' => 'required|string|max:25',
+        ]);
+
+        $event = Event::findOrFail($id);
+        $event->update($request->all());
+
+        return redirect('/events')->with('success', 'Event updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
 }

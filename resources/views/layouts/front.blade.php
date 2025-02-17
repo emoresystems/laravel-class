@@ -14,7 +14,7 @@
         <a class="nav-link" href="/services">Services</a>
         <a class="nav-link" href="/contact">Contact</a>
         <!-- <a class="nav-link" href="/projects">projects </a> -->
-        <a class="nav-link" href="/events">events </a>
+        <a class="nav-link" href="{{ route('events.index') }}">events </a>
     </nav>
 
     <!-- website content -->

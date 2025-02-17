@@ -11,7 +11,7 @@
         {{ session('success') }}
     </div>
     @endif
-    <a href="/CreateEvent">
+    <a href="{{ route('events.create') }}">
         <button class="btn btn-danger mb-5">Create an event</button>
     </a>
 
@@ -22,6 +22,10 @@
                 <h5 class="card-title fw-bold">{{ $event->title }}</h5>
                 <p class="card-text"><strong>Location:</strong> {{ $event->location }}</p>
                 <p class="small">Event ID: {{ $event->id }}</p>
+               <p>
+                <a href="{{ route('events.edit', $event->id) }}">Edit post</a>
+
+               </p>
             </div>
         </div>
         @endforeach

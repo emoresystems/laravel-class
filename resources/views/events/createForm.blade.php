@@ -4,7 +4,7 @@
 
 <h1>create form</h1>
 
-<form action="/store" method="POST">
+<form action="{{ route('events.store') }}" method="POST">
 @csrf 
     <label for="title">Enter Post Title</label>
     <input type="text" name="title" id="title">
